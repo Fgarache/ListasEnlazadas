@@ -4,6 +4,7 @@ public class Nodo {
 
     public Nodo(int d) {
         this.dato=d;
+        this.next=null;
     }
 
     public Nodo (int d, Nodo n) {
