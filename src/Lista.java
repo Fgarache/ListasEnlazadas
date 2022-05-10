@@ -45,4 +45,19 @@ public class Lista {
         System.out.println("\n===========================");
     }
 
+
+    //delete element to list
+    public int deleteFroStart (){
+        int element = inicio.dato;
+        if (inicio == fin) {
+            inicio = fin=null;
+        }else {
+            inicio=inicio.next;
+        }
+        return element;
+
+    }
+
+
+
 }
