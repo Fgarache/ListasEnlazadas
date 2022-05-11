@@ -69,8 +69,16 @@ public class Main {
                         lista.RemoveItems(elemento);
                         lista.viewArray();
 
-                        JOptionPane.showMessageDialog(null, "se Elimino: "+elemento,
-                                "Eliminar", JOptionPane.INFORMATION_MESSAGE);
+                        if (lista.searchFor(elemento) == true) {
+                            JOptionPane.showMessageDialog(null, "se Elimino: "+elemento,
+                                    "Eliminar", JOptionPane.INFORMATION_MESSAGE);
+                        }else {
+                            JOptionPane.showMessageDialog(null, "No encontrado",
+                                    "Buscar", JOptionPane.INFORMATION_MESSAGE);
+
+                        }
+
+
                         break;
 
                     case 6:
