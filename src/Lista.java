@@ -102,4 +102,13 @@ public class Lista {
         }
         
     }
+    //search element
+    public boolean searchFor (int elemento){
+        Nodo temporary = inicio;
+        while (temporary!=null && temporary.dato!=elemento){
+            temporary=temporary.next;
+        }
+        return temporary!=null;
+
+    }
 }

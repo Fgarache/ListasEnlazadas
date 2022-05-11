@@ -14,7 +14,8 @@ public class Main {
                                 "3. Insertar al final \n"+
                                 "4. eliminar primer elemento \n"+
                                 "5. eliminar elemento \n"+
-                                "6. salir", "Menu de Obciones", 3));
+                                "6. Buscar\n"+
+                                "7. salir", "Menu de Obciones", 3));
                 switch (option){
 
                     case 1:
@@ -73,7 +74,21 @@ public class Main {
                         break;
 
                     case 6:
+                        elemento=Integer.parseInt(JOptionPane.showInputDialog(null,
+                                "Ingrese elemento a buscar", "buscando nodos",
+                                JOptionPane.INFORMATION_MESSAGE));
+                        if (lista.searchFor(elemento) == true) {
+                            JOptionPane.showMessageDialog(null, "si esta el: "+elemento,
+                                    "Buscar", JOptionPane.INFORMATION_MESSAGE);
+                            lista.searchFor(elemento);
+                        }else{
+                            JOptionPane.showMessageDialog(null, "No encontrado",
+                                    "Buscar", JOptionPane.INFORMATION_MESSAGE);
+                        }
 
+
+                        break;
+                    case 7:
                         break;
 
                     default:
@@ -86,7 +101,7 @@ public class Main {
                         + e.getMessage());
             }
 
-        }while (option!=6);
+        }while (option!=7);
 
 
 
