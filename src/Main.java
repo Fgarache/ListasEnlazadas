@@ -13,7 +13,8 @@ public class Main {
                                 "2. eliminar ultimo elemento\n" +
                                 "3. Insertar al final \n"+
                                 "4. eliminar primer elemento \n"+
-                                "5. Salir", "Menu de Obciones", 3));
+                                "5. eliminar elemento \n"+
+                                "6. salir", "Menu de Obciones", 3));
                 switch (option){
 
                     case 1:
@@ -61,7 +62,20 @@ public class Main {
                         break;
 
                     case 5:
+                        elemento=Integer.parseInt(JOptionPane.showInputDialog(null,
+                                "Ingrese elemento a eliminar", "Eliminando nodos",
+                                JOptionPane.INFORMATION_MESSAGE));
+                        lista.RemoveItems(elemento);
+                        lista.viewArray();
+
+                        JOptionPane.showMessageDialog(null, "se Elimino: "+elemento,
+                                "Eliminar", JOptionPane.INFORMATION_MESSAGE);
                         break;
+
+                    case 6:
+
+                        break;
+
                     default:
                         JOptionPane.showMessageDialog(null, "Incorrecto"
                                 );
@@ -72,7 +86,7 @@ public class Main {
                         + e.getMessage());
             }
 
-        }while (option!=5);
+        }while (option!=6);
 
 
 

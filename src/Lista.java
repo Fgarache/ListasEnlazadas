@@ -1,3 +1,5 @@
+import javax.swing.*;
+
 public class Lista {
 
     protected Nodo inicio, fin;
@@ -71,5 +73,33 @@ public class Lista {
             fin.next=null;
         }
         return element;
+    }
+    //remove element specific
+    public void RemoveItems(int element){
+        if (!empty()) {
+            if (inicio == fin && element== inicio.dato) {
+                inicio=fin=null;
+            }else if (element== inicio.dato) {
+                inicio=inicio.next;
+            }else {
+                Nodo previous, temporary;
+                previous = inicio;
+                temporary = inicio.next;
+                while (temporary!=null && temporary.dato!=element){
+                    previous = previous.next;
+                    temporary = temporary.next;
+                }
+                if (temporary!=null) {
+                    previous.next=temporary.next;
+                    if (temporary == fin) {
+                        fin=previous;
+                    }
+                }
+            }
+        }else {
+            JOptionPane.showMessageDialog(null, "no se elimino",
+                    "Eliminar", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
     }
 }
