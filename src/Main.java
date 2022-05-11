@@ -10,7 +10,7 @@ public class Main {
             try {
                 option=Integer.parseInt(JOptionPane.showInputDialog(null,
                         "1. agregar elemento \n" +
-                                "2. Mostrar datos \n" +
+                                "2. eliminar ultimo elemento\n" +
                                 "3. Insertar al final \n"+
                                 "4. eliminar primer elemento \n"+
                                 "5. Salir", "Menu de Obciones", 3));
@@ -31,7 +31,10 @@ public class Main {
 
 
                     case 2:
+                        elemento = lista.RemoveEnd();
                         lista.viewArray();
+                        JOptionPane.showMessageDialog(null, "se Elimino: "+elemento,
+                                "Eliminar", JOptionPane.INFORMATION_MESSAGE);
                         break;
 
 

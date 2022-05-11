@@ -46,7 +46,7 @@ public class Lista {
     }
 
 
-    //delete element to list
+    //remove element to list
     public int deleteFroStart (){
         int element = inicio.dato;
         if (inicio == fin) {
@@ -57,7 +57,19 @@ public class Lista {
         return element;
 
     }
-
-
-
+    //remove item from list at end
+    public int RemoveEnd (){
+        int element = fin.dato;
+        if (inicio == fin) {
+            inicio = fin=null;
+        }else {
+            Nodo temporal = inicio;
+            while (temporal.next!=fin){
+                temporal=temporal.next;
+            }
+            fin=temporal;
+            fin.next=null;
+        }
+        return element;
+    }
 }
